@@ -25,7 +25,7 @@ def talk_to_me(bot, update):
     print('Пришло сообщение: %s' % update.message.text)
 
     def get_answers(key, answers):
-        return answers.get(key, 'Пишешь какую-то фигню, я не понимаю.Спроси что-нибудь нормальное!А вообще у меня есть несколько функций, я могу складывать,вычитать,делить и умножать числа.Напиши /calc и далее например 1+1 - увидишь результат.')
+        return answers.get(key, 'Я не совсем понимаю что Вы пишите.Мои создатели еще дописывают мой функционал, поэтому прошу вас подождать.')
     user_input = update.message.text.lower().strip()
     answer = get_answers(user_input, answers)
     bot.sendMessage(update.message.chat_id, text = answer)
