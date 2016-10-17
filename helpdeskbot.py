@@ -2,17 +2,18 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 answers = { 
         "привет": "И тебе привет!Меня зовут Jack-IT Support Bot, меня создали в лаборатории компании Jack-IT для помощи людям у которых есть проблемы с компьютерами", 
+        "шалом": "алейхем шалом!",
         "как дела?": "Нормально! А твои как?",
         "хорошо": "Ну и чудненько!Давай общаться?",
         "отлично": "Ну и чудненько!Давай общаться?",
         "пока": "До встречи!",
 }
 
-
 def main():
     updater = Updater("141203240:AAEgIeBWoFcz_IW1qyNkR_pYy5GcXxERWTw")
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("start", start))
+    dp.add_handler(CommandHandler("kb", kb))
     dp.add_handler(MessageHandler([Filters.text], talk_to_me))
     updater.start_polling()
     updater.idle()
