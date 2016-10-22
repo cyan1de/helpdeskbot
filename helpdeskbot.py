@@ -2,7 +2,6 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 answers = { 
         "привет": "И тебе привет!Меня зовут Jack-IT Support Bot, меня создали в лаборатории компании Jack-IT для помощи людям у которых есть проблемы с компьютерами", 
-        "шалом": "алейхем шалом!",
         "как дела?": "Нормально! А твои как?",
         "хорошо": "Ну и чудненько!Давай общаться?",
         "отлично": "Ну и чудненько!Давай общаться?",
@@ -13,7 +12,6 @@ def main():
     updater = Updater("141203240:AAEgIeBWoFcz_IW1qyNkR_pYy5GcXxERWTw")
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("start", start))
-    dp.add_handler(CommandHandler("kb", kb))
     dp.add_handler(MessageHandler([Filters.text], talk_to_me))
     updater.start_polling()
     updater.idle()
@@ -22,6 +20,12 @@ def main():
 def start(bot, update):
     print('Вызван /start')
     bot.sendMessage(update.message.chat_id, text='Давай общаться!')
+#    bot = telegram.Bot(token='141203240:AAEgIeBWoFcz_IW1qyNkR_pYy5GcXxERWTw')
+    updates = bot.getUpdates()
+    chat_id = bot.getUpdates()[-1].message.chat_id
+    custom_keyboard = [[ "Yes", "No"  ]]
+    reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
+    bot.sendMessage(chat_id=chat_id, text="Stay here, I'll be back.", reply_markup=reply_markup)
 
 def talk_to_me(bot, update):
     print('Пришло сообщение: %s' % update.message.text)
