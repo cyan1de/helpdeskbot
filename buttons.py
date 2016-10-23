@@ -1,6 +1,6 @@
 import telegram
 
-bot = telegram.Bot(token='141203240:AAEgIeBWoFcz_IW1qyNkR_pYy5GcXxERWTw')
+bot = telegram.Bot(token='TOKEN')
 updates = bot.getUpdates()
 chat_id = bot.getUpdates()[-1].message.chat_id
 custom_keyboard = [[ "Yes", "No"  ]]
