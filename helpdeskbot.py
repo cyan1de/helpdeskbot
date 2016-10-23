@@ -71,7 +71,7 @@ def error(bot, update, error):
    # bot.sendMessage(update.message.chat_id, update.message.text.encode('utf-8'))
 
 def main():
-    updater = Updater("141203240:AAEgIeBWoFcz_IW1qyNkR_pYy5GcXxERWTw")
+    updater = Updater("TOKEN")
     dp = updater.dispatcher
     #dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("user_reg", user_reg))
