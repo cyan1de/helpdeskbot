@@ -10,7 +10,7 @@ answers = {
 }
 
 def main():
-    updater = Updater("141203240:AAEgIeBWoFcz_IW1qyNkR_pYy5GcXxERWTw")
+    updater = Updater("TOKEN")
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("kb", kb))
