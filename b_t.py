@@ -18,18 +18,6 @@ from sqlalchemy.ext.declarative import declarative_base
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 
@@ -60,9 +48,7 @@ def start(bot, update):
 
 def user_reg(bot, update):
     print('Вызван /user_reg')
-    #custom_keyboard = [['Авторизоваться']]
-    #reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard,one_time_keyboard=True)
-    update.message.reply_text("Введите логин и пароль")#reply_markup=reply_markup,one_time_keyboard=True)
+    update.message.reply_text("Введите логин и пароль")
     return CHECK
 
 
@@ -141,11 +127,6 @@ def error(bot, update, error):
     logger.warn('Update "%s" caused error "%s"' % (update, error))
 
 
-"""def talk_to_me(bot,update):
-    print('Получено сообщение: %s' % update.message.text)"""
-
-
-
 
 
 def main():
@@ -186,10 +167,3 @@ if __name__ == '__main__':
         main()
     except Exception as e:
         print(e)
-
-
-
-
-
-#[Filters.text],user_reg        
-#MessageHandler([Filters.text],  
